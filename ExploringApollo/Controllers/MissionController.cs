@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ExploringApollo.Controllers
 {
-    [Route("api/[user]")]
+    [Route("api/[mission]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class MissionController : ControllerBase
     {
     }
 }

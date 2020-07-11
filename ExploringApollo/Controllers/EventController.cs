@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ExploringApollo.Controllers
 {
-    [Route("api/[user]")]
+    [Route("api/[event]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class EventController : ControllerBase
     {
     }
 }
