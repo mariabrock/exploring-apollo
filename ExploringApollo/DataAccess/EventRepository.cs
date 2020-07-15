@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace ExploringApollo.DataAccess
 {
-    public class ContentRepository
+    public class EventRepository
     {
         string ConnectionString;
 
-        public ContentRepository(IConfiguration config)
+        public EventRepository(IConfiguration config)
         {
             ConnectionString = config.GetConnectionString("ExploringApollo");
         }
 
-        internal object GetAllContent()
+        internal object GetAllEvents()
         {
             throw new NotImplementedException();
         }
 
-        internal object GetContentById(int eventId)
+        internal object GetEventById(int eventId)
         {
             throw new NotImplementedException();
         }
