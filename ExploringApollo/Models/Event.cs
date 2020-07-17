@@ -7,5 +7,10 @@ namespace ExploringApollo.Models
 {
     public class Event
     {
+        public int eventId { get; set; }
+        public int missionId { get; set; }
+        public int userId { get; set; }
+        public DateTime eventTime { get; set; }
+        public string eventName { get; set; }
     }
 }

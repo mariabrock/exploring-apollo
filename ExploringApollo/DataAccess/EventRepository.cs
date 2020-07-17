@@ -9,33 +9,33 @@ using System.Threading.Tasks;
 
 namespace ExploringApollo.DataAccess
 {
-    public class ContentRepository
+    public class EventRepository
     {
         string ConnectionString;
 
-        public ContentRepository(IConfiguration config)
+        public EventRepository(IConfiguration config)
         {
             ConnectionString = config.GetConnectionString("ExploringApollo");
         }
 
-        public IEnumerable<Content> GetAllContent()
+        public  IEnumerable<Event> GetAllEvents()
         {
             using (var db = new SqlConnection(ConnectionString))
             {
-                return db.Query<Content>("select * from Content");
+                return db.Query<Event>("select * from Event");
             }
         }
 
-        public Content GetContentById(int contentId)
+        public Event GetEventById(int eventId)
         {
             var sql = @"select * 
-                        from Content
-                        where contentId = @contentId";
+                        from Event
+                        where eventId = @eventId";
 
-            var parameters = new { ContentId = contentId };
+            var parameters = new { EventId = eventId };
             using (var db = new SqlConnection(ConnectionString))
             {
-                return db.QueryFirstOrDefault<Content>(sql, parameters);
+                return db.QueryFirstOrDefault<Event>(sql, parameters);
             }
         }
     }
