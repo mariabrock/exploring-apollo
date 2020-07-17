@@ -1,6 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Dapper;
+using ExploringApollo.Models;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,14 +18,25 @@ namespace ExploringApollo.DataAccess
             ConnectionString = config.GetConnectionString("ExploringApollo");
         }
 
-        internal object GetAllEvents()
+        public  IEnumerable<Event> GetAllEvents()
         {
-            throw new NotImplementedException();
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                return db.Query<Event>("select * from Event");
+            }
         }
 
-        internal object GetEventById(int eventId)
+        public Event GetEventById(int eventId)
         {
-            throw new NotImplementedException();
+            var sql = @"select * 
+                        from Event
+                        where eventId = @eventId";
+
+            var parameters = new { EventId = eventId };
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                return db.QueryFirstOrDefault<Event>(sql, parameters);
+            }
         }
     }
 }

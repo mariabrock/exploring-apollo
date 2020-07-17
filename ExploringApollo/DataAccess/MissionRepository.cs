@@ -27,13 +27,13 @@ namespace ExploringApollo.DataAccess
             }
         }
 
-        internal object GetMissionById(object id)
+        public Mission GetMissionById(int missionId)
         {
             var sql = @"select * 
-                        from Misison
-                        where missionId = @id";
+                        from Mission
+                        where missionId = @missionId";
 
-            var parameters = new { MissionId = id };
+            var parameters = new { MissionId = missionId };
             using (var db = new SqlConnection(ConnectionString))
             {
                 return db.QueryFirstOrDefault<Mission>(sql, parameters);

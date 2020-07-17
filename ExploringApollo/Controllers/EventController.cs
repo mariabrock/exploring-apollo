@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ExploringApollo.DataAccess;
+using ExploringApollo.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExploringApollo.Controllers
 {
-    [Route("api/[event]")]
+    [Route("api/event")]
     [ApiController]
     public class EventController : ControllerBase
     {
@@ -27,7 +28,7 @@ namespace ExploringApollo.Controllers
             return Ok(allEvents);
         }
 
-        [HttpGet("{missionId}")]
+        [HttpGet("{eventId}")]
         public IActionResult GetSelectedEventById(int eventId)
         {
             var anEvent = _repository.GetEventById(eventId);

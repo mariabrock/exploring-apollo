@@ -27,8 +27,10 @@ namespace ExploringApollo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
+            services.AddTransient<UserRepository>();
             services.AddTransient<MissionRepository>();
+            services.AddTransient<EventRepository>();
+            services.AddTransient<ContentRepository>();
             //services.AddScoped<>();
             services.AddSingleton<IConfiguration>(Configuration);
         }
@@ -46,6 +48,8 @@ namespace ExploringApollo
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("ItsAllGood");
 
             app.UseEndpoints(endpoints =>
             {

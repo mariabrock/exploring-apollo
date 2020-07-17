@@ -13,6 +13,5 @@ namespace ExploringApollo.Models
         public string email { get; set; }
         public string avatarUrl { get; set; }
         public string username { get; set; }
-        public int pickAMission { get; set; }
     }
 }
