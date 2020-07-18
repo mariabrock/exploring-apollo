@@ -16,31 +16,30 @@ class MissionCard extends React.Component  {
           <div className="row">
             <div className="col s12 l6">
               <div className="card">
-                <div className="card-image"><img src="" alt="Apollo 11 Mission Patch" />
-                <a href="#" className="halfway-fab btn-floating pink pulse"><i className="material-icons">favorite</i></a></div>
+                <div className="card-image"><img src="https://raw.githubusercontent.com/mariabrock/exploring-apollo/master/exploring-apollo.ui/exploring-apollo/src/helpers/images/apollo11patch.png" alt="Apollo 11 Mission Patch" />
                 <div className="card-content">
                 <div className="card-title">Apollo 11</div>
                 </div>
                 <div className="card-action">
-                  <a href="#">View Timeline</a>
+                  <a href="#" className="btn indigo">View Timeline</a>
+                </div>
                 </div>
               </div>
             </div>
 
             <div className="col s12 l6">
               <div className="card">
-                  <div className="card-image"><img src="" alt="Apollo 12 Mission Patch" />
-                    <a href="#" className="halfway-fab btn-floating pink pulse"><i className="material-icons">favorite</i></a></div>
+                  <div className="card-image"><img src="https://raw.githubusercontent.com/mariabrock/exploring-apollo/master/exploring-apollo.ui/exploring-apollo/src/helpers/images/apollo12patch.png" alt="Apollo 12 Mission Patch" /></div>
                     <div className="card-content">
                       <div className="card-title">Apollo 12</div>
                     </div>
                     <div className="card-action">
-                    <a href="#">View Timeline</a></div>
-                </div>
-            </div>
+                    <a href="#" className="btn disabled">View Timeline</a></div>
+                  </div>
+              </div>
           </div>
         </div>
-      </div>    
+      </div>
     );
   };
 }
