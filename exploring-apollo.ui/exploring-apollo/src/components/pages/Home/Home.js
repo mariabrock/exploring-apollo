@@ -11,8 +11,9 @@ class Home extends React.Component {
     return (
 
       <div className="container">
-        <h1>Exploring Apollo</h1>
-        <a href="#" className="waves-effect waves-light btn-large blue-grey lighten-5">Login</a>
+        <h1 className="text-white center">Exploring Apollo</h1>
+        <a href="#" className="waves-effect waves-light btn-large blue-grey darken-3" type="submit" name="action">Login</a>
+
       </div>
     );
   }
