@@ -12,7 +12,6 @@ class MissionCard extends React.Component  {
 
       <div>
         <div className="container">
-          <h2>Cards</h2>
           <div className="row">
             <div className="col s12 l6">
               <div className="card">
@@ -21,7 +20,7 @@ class MissionCard extends React.Component  {
                 <div className="card-title">Apollo 11</div>
                 </div>
                 <div className="card-action">
-                  <a href="#" className="btn indigo">View Timeline</a>
+                  <a href="/timeline" className="btn indigo">View Timeline</a>
                 </div>
                 </div>
               </div>
@@ -34,7 +33,7 @@ class MissionCard extends React.Component  {
                       <div className="card-title">Apollo 12</div>
                     </div>
                     <div className="card-action">
-                    <a href="#" className="btn disabled">View Timeline</a></div>
+                    <a href="/timeline" className="btn disabled">View Timeline</a></div>
                   </div>
               </div>
           </div>

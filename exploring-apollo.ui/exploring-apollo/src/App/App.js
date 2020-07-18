@@ -1,9 +1,21 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from 'react-router-dom';
 
 import './App.scss';
 import Home from '../components/pages/Home/Home';
 import Navbar from '../components/shared/Navbar/Navbar';
 import Missions from '../components/pages/Missions/Missions';
+import Timeline from '../components/pages/Timeline/Timeline';
+
+const PrivateRoute = ({ component: Component, authed, ...rest }) => {
+  const routeChecker = (props) => (authed === true ? <Component {...props} {...rest}/> : <Redirect to={{ pathname: '/auth', state: { from: props.location } }} />);
+  return <Route {...rest} render={(props) => routeChecker(props)} />;
+};
 
 class App extends React.Component {
 
@@ -11,9 +23,16 @@ class App extends React.Component {
 
     return (
       <div>
-          <Navbar />
-          <Home />
-          <Missions />
+        <Router>
+            <Navbar />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/missions" exact component={Missions} />
+            <Route path="/timeline" exact component={Timeline} />
+
+            {/* <Route path="/about" exact component={About} /> */}
+          </Switch>
+        </Router>
 
       </div>
     );
