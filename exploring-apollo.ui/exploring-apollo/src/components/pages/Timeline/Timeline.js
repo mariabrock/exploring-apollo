@@ -1,42 +1,49 @@
 import React from 'react';
 import './Timeline.scss';
+// import { getEventsByMissionId } from '../../../helpers/data/eventData';
 
 class Timeline extends React.Component {
-
+  state = {
+    mission: {},
+    events: []
+  }
   componentDidMount() {
 
+    // getEventsByMissionId()
+    //   .then((events) => this.setState({ events }));
   }
 
   render() {
+    const { events } = this.state;
     return (
+
 
       <div className="container">
         <h1 className="text-white center">Timeline</h1>
           <div className="container">
+            {/* <h4 className ="text-white center">`${mission.Name}`</h4> */}
             <table className="responsive-table striped white-text">
               <thead>
                 <tr>
                     <th>Event</th>
                     <th>Date & Time</th>
-                    <th>Description</th>
                 </tr>
               </thead>
 
               <tbody>
                 <tr>
-                  <td>Alvin</td>
-                  <td>Eclair</td>
-                  <td>$0.87</td>
+                  <td>`${events.eventName}`</td>
+                  <td>`${events.eventTime}`</td>
                 </tr>
                 <tr>
-                  <td>Alan</td>
-                  <td>Jellybean</td>
-                  <td>$3.76</td>
+                  <td>${}</td>
+                  <td>${}</td>
+                  <td>${}</td>
                 </tr>
                 <tr>
-                  <td>Jonathan</td>
-                  <td>Lollipop</td>
-                  <td>$7.00</td>
+                  <td>${}</td>
+                  <td>${}</td>
+                  <td>${}</td>
                 </tr>
               </tbody>
             </table>
