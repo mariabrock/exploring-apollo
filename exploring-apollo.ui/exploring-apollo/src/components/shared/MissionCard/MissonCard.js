@@ -1,13 +1,14 @@
 import React from 'react';
-// import M from "materialize-css/dist/js/materialize.min.js";
+import { Link } from 'react-router-dom';
 import './MissionCard.scss';
 
 class MissionCard extends React.Component  {
-  componentDidMount() {
-    
- }
+  static propTypes = {
+    mission: {}
+  }
   
   render() {
+    const { mission } = this.props;
     return (
 
       <div>
@@ -15,18 +16,18 @@ class MissionCard extends React.Component  {
           <div className="row">
             <div className="col s12 l6">
               <div className="card">
-                <div className="card-image"><img src="https://raw.githubusercontent.com/mariabrock/exploring-apollo/master/exploring-apollo.ui/exploring-apollo/src/helpers/images/apollo11patch.png" alt="Apollo 11 Mission Patch" />
+                <div className="card-image"><img src={`https://${mission.patchUrl}`} alt={`${mission.missionName} Mission Patch`} />
                 <div className="card-content">
-                <div className="card-title">Apollo 11</div>
+                <div className="card-title">{`${mission.missionName}`}</div>
                 </div>
                 <div className="card-action">
-                  <a href="/timeline" className="btn indigo">View Timeline</a>
+                  <Link to={`/timeline/${mission.missionId}`} className="btn indigo">View Timeline</Link>
                 </div>
                 </div>
               </div>
             </div>
 
-            <div className="col s12 l6">
+            {/* <div className="col s12 l6">
               <div className="card">
                   <div className="card-image"><img src="https://raw.githubusercontent.com/mariabrock/exploring-apollo/master/exploring-apollo.ui/exploring-apollo/src/helpers/images/apollo12patch.png" alt="Apollo 12 Mission Patch" /></div>
                     <div className="card-content">
@@ -35,7 +36,7 @@ class MissionCard extends React.Component  {
                     <div className="card-action">
                     <a href="/timeline" className="btn disabled">View Timeline</a></div>
                   </div>
-              </div>
+              </div> */}
           </div>
         </div>
       </div>

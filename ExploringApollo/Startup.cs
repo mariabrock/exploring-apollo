@@ -27,6 +27,10 @@ namespace ExploringApollo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(options =>
+                options.AddPolicy("ItsAllGood",
+                    builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin())
+            );
             services.AddTransient<UserRepository>();
             services.AddTransient<MissionRepository>();
             services.AddTransient<EventRepository>();
