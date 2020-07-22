@@ -7,6 +7,11 @@ const getAllMissions = () => new Promise((resolve, reject) => {
   .catch((error) => reject(error));
 });
 
-const getSelectedMissionById = (missionId) => axios.get(`${baseUrl}/mission/${missionId}`);
+const getSelectedMissionById = (missionId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/mission/${missionId}`)
+    .then((result) => resolve(result))
+    .catch((error) => reject(error));
+})
+
 
 export { getAllMissions, getSelectedMissionById };

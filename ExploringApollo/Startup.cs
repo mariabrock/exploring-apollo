@@ -49,8 +49,6 @@ namespace ExploringApollo
 
             app.UseAuthorization();
 
-            app.UseCors("ItsAllGood");
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
