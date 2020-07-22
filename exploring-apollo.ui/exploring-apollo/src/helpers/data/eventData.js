@@ -3,7 +3,7 @@ import { baseUrl } from '../constants.json';
 
 const getAllEvents = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/event`)
-  .then((result) => resolve(result.data))
+  .then((result) => resolve(result))
   .catch((error) => reject(error));
 });
 
