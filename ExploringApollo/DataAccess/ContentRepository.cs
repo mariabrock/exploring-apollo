@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using ExploringApollo.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,19 @@ namespace ExploringApollo.DataAccess
             using (var db = new SqlConnection(ConnectionString))
             {
                 return db.QueryFirstOrDefault<Content>(sql, parameters);
+            }
+        }
+
+        public IEnumerable<Content> GetContentByEventId(int eventId)
+        {
+            var sql = @"select * 
+                            from Content
+                            where eventId = @eventId";
+
+            var parameters = new { EventId = eventId };
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                return db.Query<Content>(sql, parameters);
             }
         }
     }

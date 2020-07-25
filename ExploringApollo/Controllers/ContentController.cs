@@ -20,6 +20,7 @@ namespace ExploringApollo.Controllers
             _repository = repository;
         }
 
+        //api/content
         [HttpGet]
         public IActionResult GetContent()
         {
@@ -28,10 +29,22 @@ namespace ExploringApollo.Controllers
             return Ok(allContent);
         }
 
+        //api/content/3
         [HttpGet("{contentId}")]
-        public IActionResult GetSelectedContentById(int eventId)
+        public IActionResult GetSelectedContentById(int contentId)
         {
-            var content = _repository.GetContentById(eventId);
+            var content = _repository.GetContentById(contentId);
+            if (content == null)
+            {
+                return NotFound("Sorry, That peice of content does not exist.");
+            }
+            return Ok(content);
+        }
+        //api/content/event/2
+        [HttpGet("eventId/{eventId}")]
+        public IActionResult GetSelectedContentByEventId(int eventId)
+        {
+            var content = _repository.GetContentByEventId(eventId);
             if (content == null)
             {
                 return NotFound("Sorry, That peice of content does not exist.");
