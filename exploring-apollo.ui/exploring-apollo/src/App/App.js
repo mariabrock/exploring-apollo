@@ -28,7 +28,7 @@ class App extends React.Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/missions" exact component={Missions} />
-            <Route path="/timeline/missionId" exact component={Timeline} />
+            <Route path="/timeline/:missionId" exact component={Timeline} />
 
             {/* <Route path="/about" exact component={About} /> */}
           </Switch>
