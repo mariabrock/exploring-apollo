@@ -3,10 +3,10 @@ import { baseUrl } from '../constants.json';
 
 const getContent = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/content`)
-  .then((result) => resolve(result.data))
+  .then((result) => resolve(result))
   .catch((error) => reject(error));
 });
 
-const getContentById = (contentId) => axios.get(`${baseUrl}/content/${contentId}`);
+const getContentByEventId = (eventId) => axios.get(`${baseUrl}/content/eventId/${eventId}`);
 
-export { getContent, getContentById };
+export { getContent, getContentByEventId };

@@ -2,6 +2,7 @@ import React from 'react';
 import './Timeline.scss';
 import TimelineTable from '../../shared/TimelineTable/TimelineTable';
 import { getAllEvents } from '../../../helpers/data/eventData';
+import { getContentByEventId } from '../../../helpers/data/contentData';
 
 class Timeline extends React.Component {
   state = {
@@ -21,11 +22,11 @@ class Timeline extends React.Component {
 
 
   render() {
-    const { events } = this.state;
+    const { events, content } = this.state;
     return (
       <div className="container">
         <h1 className="text-white center">Timeline</h1>
-        <TimelineTable events={events} />
+        <TimelineTable events={events} content={content} />
       </div>
       
     );
