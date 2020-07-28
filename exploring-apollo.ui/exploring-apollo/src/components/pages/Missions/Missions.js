@@ -1,6 +1,6 @@
 import React from 'react';
 import './Missions.scss';
-import MissionCard from '../../shared/MissionCard/MissonCard';
+import MissionCard from '../../shared/MissionCard/MissionCard';
 import { getAllMissions } from '../../../helpers/data/missionData';
 
 class Missions extends React.Component {

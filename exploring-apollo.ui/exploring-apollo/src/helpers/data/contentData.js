@@ -7,6 +7,10 @@ const getContent = () => new Promise((resolve, reject) => {
   .catch((error) => reject(error));
 });
 
-const getContentByEventId = (eventId) => axios.get(`${baseUrl}/content/eventId/${eventId}`);
+const getContentByEventId = (eventId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/content/eventId/${eventId}`)
+  .then((result) => resolve(result))
+  .catch((error) => reject(error));
+});
 
 export { getContent, getContentByEventId };

@@ -1,28 +1,11 @@
 import React from 'react';
-import Modal from '../../shared/ContentModal/ContentModal';
-import M from "materialize-css/dist/js/materialize.min.js";
 
 import './TimelineTable.scss';
 
 
 class TimelineTable extends React.Component {
-  state = {
-    content: [],
-    modalOpen: false,
-  }
-
-  componentDidMount() {
-    this.openModal();
-    };
-
-    openModal() {
-      var elems = document.querySelectorAll('.modal');
-      M.Modal.init(elems);
-    }
-
   render() {
-    const { openModal } = this.setState;
-    const { events, content } = this.props;
+    const { events } = this.props;
     return (
       
       <div className="container">
@@ -38,16 +21,14 @@ class TimelineTable extends React.Component {
 
               <tbody>
               {events == null ? [] : events.map((events) =>
-                <tr key={events.id}>
+                <tr key={events.eventId}>
                   <td>{events.eventName}</td>
                   <td>{events.eventTime}</td>
-                  {/* <td onClick={openModal()} className="btn-floating blue darken-2 modal-trigger"><i className="fas fa-play-circle 2X">{content == null ? [] : content.map((content) =><Modal key={content.id} content={content} />)}</i></td> */}
+                  <td><a href={`/content/${events.eventId}`}  className="floating-btn indigo lighten-2 modal-trigger"><i className="fas fa-play-circle" id={events.eventId} ></i></a></td>
                 </tr>
               )}
-
               </tbody>
             </table>
-
           </div>
 
       </div>
