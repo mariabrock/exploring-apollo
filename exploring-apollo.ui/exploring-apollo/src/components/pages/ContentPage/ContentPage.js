@@ -7,24 +7,27 @@ import './ContentPage.scss';
 
 class ContentPage extends React.Component{
   state = {
-    content: []
+    eventId: null
   }
 
   componentDidMount() {
-    this.getContentByEventId(this.props.match.params.eventId);
+    this.getContentObjectsByEventId(this.props.match.params.eventId);
   }
 
-  getContentByEventId(eventId) {
+  getContentObjectsByEventId(eventId) {
     getContentByEventId(eventId)
-    .then((result) => this.setState({ content: result.data }))
-    .catch((error) => console.error('error getting contentId info', error));
+    .then((result) => this.setState({ eventId: result.data }))
+    .catch((error) => console.error('error getting content by eventId info', error));
    }
 
   render(){
-    const { content } = this.setState;
+    const { eventId } = this.state;
+    console.log(eventId);
     return(
-      <ContentDisplay content={content}/>
-    )
+      <div>
+      { eventId == null ? [] : eventId.map((eventId) => <ContentDisplay eventId={eventId} /> )}
+      </div>
+    );
   }
 }
 
