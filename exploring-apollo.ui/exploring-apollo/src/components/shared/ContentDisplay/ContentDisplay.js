@@ -1,10 +1,8 @@
 import React from 'react';
 import './ContentDisplay.scss';
-
 import M from "materialize-css/dist/js/materialize.min.js";
 
 class ContentDisplay extends React.Component{
-  
   componentDidMount() {
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.materialboxed');
@@ -12,18 +10,16 @@ class ContentDisplay extends React.Component{
     });
   }
 
-  render(){
-    const { content } = this.props;
+
+  render() {
+    const { eventId } = this.props;
     return(
-      // <div>
-      //   <div className='container'>
-          <img className="materialboxed" width="650" src="https://images-assets.nasa.gov/image/S69-34882/S69-34882~orig.jpg" />
-      //   {content == null ? [] : content.map((content) =>
-      //         )}
-        
-      //   </div>
-      // </div>
-    )
+      <div>
+        <div className='container'>
+        <img className="materialboxed" width="250" src={`https://${eventId.url}`} />
+        </div>
+      </div>
+    );
   }
   
 }
