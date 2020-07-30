@@ -37,5 +37,18 @@ namespace ExploringApollo.Controllers
             }
             return Ok(user);
         }
+
+        [HttpPost]
+        public IActionResult AddUser(User userToAdd)
+        {
+            var existingUser = _repository.GetUserByUserName(userToAdd.username);
+            if (existingUser == null)
+            {
+                var newUser = _repository.Add(userToAdd);
+                return Created("", newUser);
+            }
+
+            return Ok(existingUser);
+        }
     }
 }
