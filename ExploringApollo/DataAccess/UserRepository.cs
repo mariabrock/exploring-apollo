@@ -39,5 +39,34 @@ namespace ExploringApollo.DataAccess
                 return result;
             }
         }
+
+        public User GetUserByUserName(string userName)
+        {
+            var sql = @"
+                    select *
+                    from Users
+                    where UserName = @userName";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var parameters = new { UserName = userName };
+                var result = db.QueryFirstOrDefault<User>(sql, parameters);
+                return result;
+            }
+        }
+
+        public User Add(User user)
+        {
+            var sql = $@"
+            insert into Users(userId, firstName, lastName, userName, email, avatarUrl)
+            output inserted. *
+            Values(@userId, @firstName, @lastName, @userName, @email, @avatarUrl)";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var result = db.QueryFirstOrDefault<User>(sql, user);
+                return result;
+            }
+        }
     }
 }
