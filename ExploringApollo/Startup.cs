@@ -51,7 +51,7 @@ namespace ExploringApollo
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseCors("ItsAllGood");
 
