@@ -45,100 +45,58 @@ class SignUpForm extends React.Component {
       email, password, firstName, lastName, userName,
     } = this.state;
     return (
-
       <div>
-        <div className="container sign-up blue-grey card hoverable">
-          <div className="row">
-              <form action="submit" className="col s12 sign-up-form" onSubmit={this.registerEvent}>
-                <div className="row">
-                  <div className="input-field col s6">
-                    <form 
-                    id="first_name" 
-                    type="text"
-                    value={firstName}
-                    handleChange={this.handleChange} 
-                    className="validate" />
-
-                    <label for="first_name">First Name</label>
-                    <span class="helper-text" data-error="error" data-success="right">You got a name, kid?</span>
-                  </div>
-
-                  <div className="input-field col s6">
-                    <form 
-                    id="last_name" 
-                    type="text" 
-                    value={lastName}
-                    handleChange={this.handleChange}
-                    className="validate" />
-
-                    <label for="last_name">Last Name</label>
-                    <span class="helper-text" data-error="error" data-success="right">Everybody needs one.</span>
-                  </div>
-                </div>
-
-                <div className="row">
-                  <div className="input-field col s12">
-                    <form 
-                    id="email" 
-                    type="email"
-                    value={email}
-                    handleChange={this.handleChange} 
-                    className="validate" />
-
-                    <label for="email">Email</label>
-                    <span class="helper-text" data-error="error" data-success="right">You got mail?</span>
-                  </div>
-                </div>
-
-                <div className="row">
-                  <div className="input-field col s12">
-                    <form 
-                    id="password" 
-                    type="password"
-                    value={password}
-                    handleChange={this.handleChange} 
-                    className="validate" />
-
-                    <label for="password">Password</label>
-                    <span class="helper-text" data-error="error" data-success="right">Make sure I can't guess it later.</span>
-                  </div>
-                </div>
-
-                <div className="row">
-                  <div className="input-field col s12">
-                    <form 
-                    id="userName" 
-                    type="text" 
-                    value={userName}
-                    handleChange={this.handleChange}
-                    className="validate" />
-
-                    <label for="userName">UserName</label>
-                    <span class="helper-text" data-error="error" data-success="right">Insert Funny Name Here.</span>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-
-        <div className="container">
-          <form action="submit" onSubmit={this.registerEvent}>
-            <div class="file-field input-field">
-              <div class="btn">
-                <span>Image</span>
-                <input type="file" />
+      <div className="container pt-60 card hoverable">
+        <div className="card-content">
+        <h4 className="center blue-text">Register</h4>
+          <form className="col s12" action="#">
+            <div className="row">
+              <div className="input-field col s6">
+                <input  type="text" className="validate" />
+                <label for="first_name">Username</label>
               </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" />
-                <span class="helper-text" data-error="error" data-success="right">I love nerds.</span>
+              <div className="input-field col s6">
+                <input id="last_name" type="text" className="validate" />
+                <label for="last_name">Full Name</label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field col s6">
+                <input id="pass" type="password" className="validate" />
+                <label for="pass">Password</label>
+              </div>
+              <div className="input-field col s6">
+                <input id="c_pass" type="password" className="validate" />
+                <label for="c_pass">Confirm Password</label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field col s12">
+                <input id="email" type="email" className="validate" />
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div className="row mb-0">
+              <div className="input-field col s12">
+                <textarea id="textarea1" className="materialize-textarea"></textarea>
+                <label for="textarea1">Address</label>
+              </div>
+            </div>
+            <label>
+            <input type="checkbox" />
+            <span>Remember Me</span>
+            </label>
+            <div className="row">
+              <div className="col s12 mt-25"> 
+                <button className="btn waves-effect waves-light blue" type="submit">Register
+                <i className="material-icons right">send</i>
+                </button>
               </div>
             </div>
           </form>
-          <button class="btn waves-effect waves-light blue-grey darken-3" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-          </button>
         </div>
       </div>
+    </div>
     );
   }
 }
