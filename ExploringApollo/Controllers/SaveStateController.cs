@@ -40,5 +40,13 @@ namespace ExploringApollo.Controllers
 
             return Ok(existingSave);
         }
+
+        [HttpGet("mostrecent/{userId}")]
+        public IActionResult GetMostRecentUserInstance(int userId)
+        
+        {
+            var user = _repository.MostRecentInstance(userId);
+            return Ok(user);
+        }
     }
 }

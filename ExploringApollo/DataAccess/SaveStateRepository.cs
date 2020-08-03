@@ -52,5 +52,22 @@ namespace ExploringApollo.DataAccess
                 return result;
             }
         }
+
+        public SaveState MostRecentInstance(int userId)
+        {
+            var sql = $@"
+                        Select * 
+                        FROM SaveState 
+                        WHErE instance = (select max(instance) 
+                           from SaveState 
+                           where userId = @userId)";
+
+            var parameters = new { UserId = userId };
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var result = db.QueryFirstOrDefault<SaveState>(sql, parameters);
+                return result;
+            }
+        }
     }
 }
