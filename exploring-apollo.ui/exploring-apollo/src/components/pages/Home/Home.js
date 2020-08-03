@@ -13,7 +13,7 @@ class Home extends React.Component {
       <div className="container">
         <h1 className="text-white center">Exploring Apollo</h1>
         <div className="container center-align">
-        <a href="/profile" className="waves-effect waves-light btn-large blue-grey darken-3">Login</a>
+        {/* <a href="/profile" className="waves-effect waves-light btn-large blue-grey darken-3">Login</a> */}
         </div>
       </div>
     );
