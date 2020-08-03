@@ -36,42 +36,31 @@ class SignInForm extends React.Component {
     } = this.state;
 
     return (
-      <div>
-        <div className="container sign-in blue-grey card hoverable">
-        <form action="submit" className="col s12 sign-up-form" onSubmit={this.signInEvent}>
-        <div className="row">
-          <div className="input-field col s12">
-            <form 
-            id="email" 
-            type="email"
-            value={email}
-            handleChange={this.handleChange} 
-            className="validate" />
-
-            <label for="email">Email</label>
-            <span class="helper-text" data-error="error" data-success="right">You got mail?</span>
+      <div class="container col">
+      <div class="row card hoverable">
+        <div class="card-content">
+        <h4 class="center blue-text">Login</h4>
+        <form class="col s12">
+        <div class="col s12">
+          <div class="input-field">
+            <input type="text" name="" placeholder="Username*" />
           </div>
         </div>
-
-        <div className="row">
-          <div className="input-field col s12">
-            <form 
-            id="password" 
-            type="password"
-            value={password}
-            handleChange={this.handleChange} 
-            className="validate" />
-
-            <label for="password">Password</label>
-            <span class="helper-text" data-error="error" data-success="right">Make sure I can't guess it later.</span>
+          <div class="col s12">
+          <div class="input-field">
+            <input type="password" name="" placeholder="Password*" />
           </div>
         </div>
-        <button class="btn waves-effect waves-light blue-grey darken-3" type="submit" name="action">Submit
-          <i class="material-icons right">send</i>
-        </button>
-        </form>
+        <div class="col s12">
+          <p><label><input type="checkbox" /></label></p>
+        </div>
+        <div class="col s12 center">
+          <button type="button" class="btn btn-large waves-effect waves-light blue">Login<i class="material-icons right">send</i></button>
+        </div>
+      </form>
       </div>
-      </div>  
+    </div>
+    </div>
     );
   }
 }

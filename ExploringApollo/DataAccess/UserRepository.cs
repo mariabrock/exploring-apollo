@@ -57,7 +57,7 @@ namespace ExploringApollo.DataAccess
 
         public User Add(User user)
         {
-            var sql = $@"
+            var sql = @"
             insert into Users(userId, firstName, lastName, userName, email, avatarUrl)
             output inserted. *
             Values(@userId, @firstName, @lastName, @userName, @email, @avatarUrl)";

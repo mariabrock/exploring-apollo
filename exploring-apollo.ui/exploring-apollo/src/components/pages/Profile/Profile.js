@@ -12,13 +12,15 @@ class Profile extends React.Component {
   render() {
     return (
 
-      <div className="container">
+      <div>
         <h1 className="text-white center">Welcome, Traveler!</h1>
           <div className="container">
+          <div className="row flex-row">
             <SignUpForm /> 
-            <h1 className="text-white center">OR</h1>
+            <h1 className="text-white center">Or</h1>
             <SignInForm />
           </div>
+        </div>
       </div>
     );
   }
