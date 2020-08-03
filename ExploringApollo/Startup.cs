@@ -35,6 +35,7 @@ namespace ExploringApollo
             services.AddTransient<MissionRepository>();
             services.AddTransient<EventRepository>();
             services.AddTransient<ContentRepository>();
+            services.AddTransient<SaveStateRepository>();
             //services.AddScoped<>();
             services.AddSingleton<IConfiguration>(Configuration);
         }
