@@ -39,26 +39,12 @@ namespace ExploringApollo.DataAccess
             }
         }
 
-        public SaveState Add(SaveState instance)
-        {
-            var sql = $@"
-                    insert into SaveState(saveId, userId, missionId, eventId, instance)
-                    output inserted. *
-                    Values(@saveId, @userId, @missionId, @eventId, @instance)";
-
-            using (var db = new SqlConnection(ConnectionString))
-            {
-                var result = db.QueryFirstOrDefault<SaveState>(sql, instance);
-                return result;
-            }
-        }
-
         public SaveState MostRecentInstance(int userId)
         {
             var sql = $@"
                         Select * 
                         FROM SaveState 
-                        WHErE instance = (select max(instance) 
+                        WHERE instance = (select max(instance) 
                            from SaveState 
                            where userId = @userId)";
 
@@ -66,6 +52,20 @@ namespace ExploringApollo.DataAccess
             using (var db = new SqlConnection(ConnectionString))
             {
                 var result = db.QueryFirstOrDefault<SaveState>(sql, parameters);
+                return result;
+            }
+        }
+
+        public SaveState Add(SaveState objectToAdd)
+        {
+            var sql = $@"
+                    insert into SaveState(userId, missionId, eventId, instance)
+                    output inserted. *
+                    Values(@userId, @missionId, @eventId, @instance)";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var result = db.QueryFirstOrDefault<SaveState>(sql, objectToAdd);
                 return result;
             }
         }

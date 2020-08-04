@@ -28,25 +28,20 @@ namespace ExploringApollo.Controllers
             return Ok(allInstances);
         }
 
-        [HttpPost]
-        public IActionResult AddSave(SaveState instancetoAdd)
-        {
-            var existingSave = _repository.GetSaveByUserId(instancetoAdd.userId);
-            if (existingSave == null)
-            {
-                var newSave = _repository.Add(instancetoAdd);
-                return Created("", newSave);
-            }
-
-            return Ok(existingSave);
-        }
-
         [HttpGet("mostrecent/{userId}")]
         public IActionResult GetMostRecentUserInstance(int userId)
-        
+
         {
             var user = _repository.MostRecentInstance(userId);
             return Ok(user);
         }
+
+        [HttpPost]
+        public IActionResult AddSave(SaveState objectToAdd)
+        {
+            var newSave = _repository.Add(objectToAdd);
+            return Ok(newSave);
+        }
+        
     }
 }

@@ -20,7 +20,7 @@ state= {
   render() {
     const { eventId } = this.state;
     return (
-      <Link to={`/content/${eventId}`} className="waves-effect waves-light btn-large blue-grey darken-3">Continue</Link>
+      <Link to={`/content/${eventId}`} className="waves-effect waves-light btn-large blue-grey darken-3">Welcome Back, would you like to continue?</Link>
       // <Link to={`/timeline/${mission.missionId}`} className="btn indigo">View Timeline</Link>
     );
   }

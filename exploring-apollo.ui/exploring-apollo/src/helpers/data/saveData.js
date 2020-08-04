@@ -9,7 +9,6 @@ const getMostRecentUserInstance = (userId) => new Promise((resolve, reject) => {
 }); 
 
 const saveUserInstance = (userObj) => {
-  console.log(userObj)
    return axios.post(`${baseUrl}/saveprogress`, userObj);
 }
 

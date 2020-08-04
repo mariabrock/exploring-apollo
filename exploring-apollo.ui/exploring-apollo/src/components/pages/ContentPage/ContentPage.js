@@ -13,8 +13,7 @@ class ContentPage extends React.Component{
 
   componentDidMount() {
     const userId = getLoggedInUser();
-      console.log(userId)
-      const userObj = { userId:userId, missionId:5, instance:new Date(2020, 8, 3, 9, 21), eventId:Number(this.props.match.params.eventId)}
+      const userObj = { userId:userId, eventId:Number(this.props.match.params.eventId), instance:new Date()}
       saveUserInstance(userObj);
 
     this.getContentObjectsByEventId(this.props.match.params.eventId);
@@ -28,13 +27,12 @@ class ContentPage extends React.Component{
 
   render(){
     const { eventId } = this.state;
-    console.log(eventId);
     return(
       <div>
         <div className="container">
         {/* <button onClick={window.history.back()} className="waves-effect waves-light btn-large indigo">Go Back</button> */}
         </div>
-      { eventId == null ? [] : eventId.map((eventId) => <ContentDisplay eventId={eventId} /> )}
+      { eventId == null ? [] : eventId.map((eventId) => <ContentDisplay key={eventId.contentId} eventId={eventId} /> )}
       </div>
     );
   }
