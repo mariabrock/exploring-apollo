@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.scss';
+import Auth from '../Auth/Auth';
 
 class Home extends React.Component {
 
@@ -13,7 +14,7 @@ class Home extends React.Component {
       <div className="container">
         <h1 className="text-white center">Exploring Apollo</h1>
         <div className="container center-align">
-        {/* <a href="/profile" className="waves-effect waves-light btn-large blue-grey darken-3">Login</a> */}
+        <Auth />
         </div>
       </div>
     );

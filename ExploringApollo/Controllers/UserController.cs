@@ -50,5 +50,6 @@ namespace ExploringApollo.Controllers
 
             return Ok(existingUser);
         }
+
     }
 }

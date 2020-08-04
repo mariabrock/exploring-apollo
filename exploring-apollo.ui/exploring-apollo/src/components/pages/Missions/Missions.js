@@ -25,7 +25,7 @@ class Missions extends React.Component {
 
       <div className="container">
         <h1 className="text-white center">Select A Mission</h1>
-        {mission == null ? [] : mission.map((mission) => <MissionCard key= {mission.id} mission={mission}/>)} 
+        {mission == null ? [] : mission.map((mission) => <MissionCard key={mission.missionId} mission={mission}/>)} 
       </div>
     );
   }

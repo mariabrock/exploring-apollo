@@ -20,7 +20,7 @@ class Navbar extends React.Component  {
               <li><a href="/">Home</a></li>
               <li><a href="/missions">Missions</a></li>
               <li><a href="/about">About</a></li>
-              <li><a href="/profile" className="btn-floating blue-grey lighten-3"><i className="fas fa-user-astronaut"></i></a></li>
+              <li><a href="#" className="btn-floating blue-grey lighten-3"><i className="fas fa-user-astronaut"></i></a></li>
               <li><span className="badge white-text pink new"></span></li>
             </ul>
           </div>

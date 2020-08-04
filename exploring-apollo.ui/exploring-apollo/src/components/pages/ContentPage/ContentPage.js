@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { getLoggedInUser } from '../../../helpers/data/userData';
+import { saveUserInstance } from '../../../helpers/data/saveData';
 import { getContentByEventId } from '../../../helpers/data/contentData';
 import ContentDisplay from '../../shared/ContentDisplay/ContentDisplay';
 import './ContentPage.scss';
@@ -11,6 +12,10 @@ class ContentPage extends React.Component{
   }
 
   componentDidMount() {
+    const userId = getLoggedInUser();
+      const userObj = { userId:userId, eventId:Number(this.props.match.params.eventId), instance:new Date()}
+      saveUserInstance(userObj);
+
     this.getContentObjectsByEventId(this.props.match.params.eventId);
   }
 
@@ -22,10 +27,12 @@ class ContentPage extends React.Component{
 
   render(){
     const { eventId } = this.state;
-    console.log(eventId);
     return(
       <div>
-      { eventId == null ? [] : eventId.map((eventId) => <ContentDisplay eventId={eventId} /> )}
+        <div className="container">
+        {/* <button onClick={window.history.back()} className="waves-effect waves-light btn-large indigo">Go Back</button> */}
+        </div>
+      { eventId == null ? [] : eventId.map((eventId) => <ContentDisplay key={eventId.contentId} eventId={eventId} /> )}
       </div>
     );
   }
