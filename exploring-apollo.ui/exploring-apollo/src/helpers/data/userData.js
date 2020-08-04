@@ -6,4 +6,4 @@ const getLoggedInUser = () => 1; // axios.get("myAPIURL/user/1")
 
 const addUserToDatabase = (userObj) => axios.post(`${baseUrl}/user`, userObj);
 
-export default{ getLoggedInUser, addUserToDatabase }
+export { getLoggedInUser, addUserToDatabase }

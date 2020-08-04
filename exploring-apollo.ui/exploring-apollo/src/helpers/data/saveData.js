@@ -8,6 +8,9 @@ const getMostRecentUserInstance = (userId) => new Promise((resolve, reject) => {
   .catch((error) => reject(error));
 }); 
 
-const saveUserInstance = (userId) => axios.post(`${baseUrl}/saveprogress`, userId);
+const saveUserInstance = (userObj) => {
+  console.log(userObj)
+   return axios.post(`${baseUrl}/saveprogress`, userObj);
+}
 
-export default{ saveUserInstance, getMostRecentUserInstance }
+export { saveUserInstance, getMostRecentUserInstance }
