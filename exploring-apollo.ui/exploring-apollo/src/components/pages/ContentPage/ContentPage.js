@@ -29,10 +29,12 @@ class ContentPage extends React.Component{
     const { eventId } = this.state;
     return(
       <div>
-        <div className="container">
-        {/* <button onClick={window.history.back()} className="waves-effect waves-light btn-large indigo">Go Back</button> */}
+        <div className="container content row valign-wrapper">
+          {/* <div className="container button">
+          {/* <button onClick={window.history.back()} className="waves-effect waves-light btn-large indigo">Go Back</button> */}
+          {/* </div> */}
+        { eventId == null ? [] : eventId.map((eventId) => <ContentDisplay key={eventId.contentId} eventId={eventId} /> )}
         </div>
-      { eventId == null ? [] : eventId.map((eventId) => <ContentDisplay key={eventId.contentId} eventId={eventId} /> )}
       </div>
     );
   }

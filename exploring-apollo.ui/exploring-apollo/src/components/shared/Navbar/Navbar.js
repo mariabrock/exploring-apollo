@@ -12,7 +12,7 @@ class Navbar extends React.Component  {
     return (
 
       <div>
-        <nav className="nav-wrapper blue-grey darken-3">
+        <nav className="nav-wrapper grey darken-3">
           <div className="container">
           <a href="/" className="btn-floating blue-grey lighten-3"><i className="fas fa-rocket"></i></a>
           <a href="#" className="sidenav-trigger" data-target="mobile-links"><i className="material-icons">menu</i></a>
@@ -28,7 +28,7 @@ class Navbar extends React.Component  {
 
         <div>
           <ul className="sidenav" id="mobile-links">
-          <li><a href="#" className="btn-floating blue-grey lighten-3 z-depth-0"><i className="material-icons">person</i></a></li>
+          <li><a href="#" className="btn-floating blue-grey lighten-3"><i className="fas fa-user-astronaut"></i></a></li>
             <li><a href="/">Home</a></li>
             <li><a href="/missions">Missions</a></li>
             <li><a href="/about">About</a></li>

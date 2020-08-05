@@ -16,7 +16,8 @@ class ContentDisplay extends React.Component{
     return(
       <div>
         <div className='container'>
-        <img className="materialboxed" width="250" src={`https://${eventId.url}`} />
+          <img className="responsive-img" width="350" src={`https://${eventId.url}`} />
+          <p className="text-white center">{eventId.description}</p>
         </div>
       </div>
     );
