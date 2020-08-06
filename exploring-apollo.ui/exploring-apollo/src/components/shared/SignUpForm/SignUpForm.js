@@ -1,6 +1,6 @@
 import React from 'react';
 import './SignUpForm.scss';
-import userData from '../../../helpers/data/userData';
+import { getLoggedInUser } from '../../../helpers/data/userData';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -25,9 +25,9 @@ class SignUpForm extends React.Component {
       email, password, firstName, lastName, userName,
     } = this.state;
     const userObj = { ...this.state };
-    userData.registerUser(email, password, firstName, lastName, userName)
+    getLoggedInUser.registerUser(email, password, firstName, lastName, userName)
       .then(() => {
-        userData.addUserToDatabase(userObj);
+        getLoggedInUser.addUserToDatabase(userObj);
         console.error('this works');
       })
       .catch((error) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './SignInForm.scss';
-import userData from '../../../helpers/data/userData';
+import { getLoggedInUser } from '../../../helpers/data/userData';
 
 class SignInForm extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class SignInForm extends React.Component {
   signInEvent = (e) => {
     e.preventDefault();
     const { email, password } = this.state;
-    userData.loginUser(email, password)
+    getLoggedInUser.loginUser(email, password)
       .then(() => {
         this.props.history.push('/home');
         console.error('this works');

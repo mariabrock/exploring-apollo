@@ -12,7 +12,7 @@ import Navbar from '../components/shared/Navbar/Navbar';
 import Missions from '../components/pages/Missions/Missions';
 import Timeline from '../components/pages/Timeline/Timeline';
 import ContentPage from '../components/pages/ContentPage/ContentPage';
-// import Profile from '../components/pages/Profile/Profile';
+import Profile from '../components/pages/Profile/Profile';
 import AboutPage from '../components/pages/AboutPage/AboutPage';
 
 // const PrivateRoute = ({ component: Component, authed, ...rest }) => {
@@ -33,7 +33,7 @@ class App extends React.Component {
             <Route path="/missions" exact component={Missions} />
             <Route path="/timeline/:missionId" exact component={Timeline} />
             <Route path="/content/:eventId" exact component={ContentPage} />
-            {/* <Route path="/profile" exact component ={Profile} /> */}
+            <Route path="/profile" exact component ={Profile} />
             <Route path="/about" exact component={AboutPage} />
           </Switch>
         </Router>
