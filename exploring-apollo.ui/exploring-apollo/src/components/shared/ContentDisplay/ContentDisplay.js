@@ -16,8 +16,7 @@ class ContentDisplay extends React.Component{
     return(
       <div>
         <div className='container'>
-          <img className="responsive-img" width="350" src={`https://${eventId.url}`} />
-          {/* <p className="text-white center">{eventId.description}</p> */}
+          <img className="responsive-img" width="350" alt={`${eventId.contentName}`} src={`https://${eventId.url}`} />
         </div>
       </div>
     );
