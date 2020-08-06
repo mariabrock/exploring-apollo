@@ -16,8 +16,21 @@ class ContentDisplay extends React.Component{
     return(
       <div>
         <div className='container'>
-          <img className="responsive-img" width="350" alt={`${eventId.contentName}`} src={`https://${eventId.url}`} />
+          {/* <img className="responsive-img" width="350" src={`https://${eventId.url}`} /> */}
+          <div className="row">
+            <div className="col s12 l6">
+              <div className="card indigo lighten-5">
+                <div className="card-image"><img src={`https://${eventId.url}`} alt={`${eventId.contentName} Mission Patch`} /></div>
+                <div className="card-content">
+                <div className="card-title center black-text">{`${eventId.description}`}</div>
+                <div className="card-action">
+                  {/* <Link to={`/timeline/${mission.missionId}`} className="btn indigo darken-4">View Timeline</Link> */}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
       </div>
     );
   }
