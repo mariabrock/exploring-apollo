@@ -1,3 +1,39 @@
+# NSS Backend Capstone: Exploring Apollo
+
+## Description
+
+Exploring Apollo is a interactive learning experience to
+teach learners about the inner workings of an Apollo Era
+Space mission. You will start out learning about Apollo 11
+and the Moon Landing through photographs and video
+taken throughout the mission.
+
+## Features
+
+- Built in React, JavaScript, Materialize, C#, and .Net framework
+- User is able to view and save their progress when progressing through the selected Mission's events
+- Database utilized was built in SQL and uses images from the NASA Image & Video Library. Check it out: (https://images.nasa.gov/)
+
+## Technologies Used
+
+- Single page web application using React on the client side
+- React routing was used to navigate throughout the applicaiton
+- Combination of Materialize CSS and Sass used for styling, modal functionality, and Grid system
+- C#/ASP.NET Core used to develop web API
+- SQL Server Used for data storage
+
+## Screenshots
+![Pageload]()
+![All Books]()
+![In Progress]()
+![Complete Books]()
+![Wishlist]()
+![Book View 1]()
+![Book View 2]()
+![Add A Book]()
+![Edit Book]()
+![Add A Record]()
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
