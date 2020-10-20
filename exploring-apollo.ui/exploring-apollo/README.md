@@ -23,16 +23,21 @@ taken throughout the mission.
 - SQL Server Used for data storage
 
 ## Screenshots
-![Pageload]()
-![All Books]()
-![In Progress]()
-![Complete Books]()
-![Wishlist]()
-![Book View 1]()
-![Book View 2]()
-![Add A Book]()
-![Edit Book]()
-![Add A Record]()
+![Pageload](https://raw.githubusercontent.com/mariabrock/exploring-apollo/master/exploring-apollo.ui/exploring-apollo/src/screenshots/pageload.PNG)
+![missionview1]()
+![missionview2]()
+![missionview3]()
+![timelineview1]()
+![timelineview1]()
+![timelineview1]()
+![eventview]()
+
+## Screenshots - Responsive
+![responsivemenu]()
+![responsivehomepage]()
+![responsivemissions]()
+![responsivetimeline]()
+![responsiveevent]()
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
