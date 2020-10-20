@@ -12,8 +12,8 @@ class Home extends React.Component {
     return (
 
       <div className="container">
-        <h1 className="text-white center">Exploring Apollo</h1>
         <div className="container center-align">
+        <h1 className="text-white center">Exploring Apollo</h1>
         <Auth />
         </div>
       </div>
